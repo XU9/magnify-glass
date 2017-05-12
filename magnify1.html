@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向过程做法</title>
+	<link rel="stylesheet" href="css/magnify.css">
+</head>
+<body>
+	<div id="outer">
+		<div id="small">
+		<img src="img/2.jpg" alt="">
+		<div></div>
+		</div>
+			<div id="biger"><img src="img/2.jpg" alt=""></div>
+		</div>
+
+	<script>
+		var small=document.getElementById('small');
+		var biger=document.getElementById('biger');
+		var sImg=small.querySelector('img');
+		var smove=small.querySelector('div');
+		small.onmousemove=function(e) {
+			smove.style.display="block";
+			biger.style.display="block";
+			var e=e||window.event;
+			maxl=small.offsetWidth-smove.offsetWidth;
+			maxt=small.offsetHeight-smove.offsetHeight;
+			var l=e.clientX-small.offsetLeft-smove.offsetWidth/2;
+			var t=e.clientY-small.offsetTop-smove.clientHeight/2;
+			if (l<0) {
+				l=0;
+			}else if (l>maxl) {
+				l=maxl;
+			}
+			if (t<0) {
+				t=0;
+			}else if (t>maxt) {
+				t=maxt;
+			}
+			smove.style.left=l+"px";
+			smove.style.top=t+"px";
+			var num=4;
+			biger.scrollLeft=num*l;
+			biger.scrollTop=num*t;
+
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery插件做法</title>
+	<link rel="stylesheet" href="css/magnify.css">
+</head>
+<body>
+	<div id="outer">
+		<div id="small">
+		<img src="img/2.jpg" alt="">
+		<div></div>
+		</div>
+			<div id="biger"><img src="img/2.jpg" alt=""></div>
+		</div>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/magnify.pug.js"></script>
+	<script>
+	$('#outer').magnify();
+	// 可自行更改图片，及放大前后的大小
+	// $('#outer').magnify({'s_wh':200,'b_wh':300,'img':'img/1.jpg'});
+	</script>	
+
+</body>
+</html>
